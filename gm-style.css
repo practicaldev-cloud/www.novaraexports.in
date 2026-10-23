@@ -1,0 +1,168 @@
+/* Global Markets page styles, exactly as supplied. Each selector is prefixed with .gm-page so the rules only affect this page's content. */
+.gm-page{--green:#164a37;--green-dark:#103728;--green-soft:#eaf0e3;--gold:#e5a51f;--gold-dark:#c78a10;--cream:#faf9f1;--ink:#17352b;--muted:#5d6b63;--line:#dce4d7;--white:#fff;--shadow:0 18px 50px rgba(27,58,43,.08)}
+.gm-page *{box-sizing:border-box}
+.gm-page{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.gm-page a{color:inherit;text-decoration:none}
+.gm-page .site-header{height:76px;padding:0 clamp(22px,7vw,112px);display:flex;align-items:center;justify-content:space-between;gap:28px;background:rgba(255,255,250,.94);border-bottom:1px solid rgba(22,74,55,.08);position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}
+.gm-page .brand{display:inline-flex;align-items:center;gap:10px;flex-shrink:0}
+.gm-page .brand-mark{width:43px;height:43px;border-radius:50%;background:var(--green);display:grid;place-items:center;position:relative;color:white;font-family:Georgia,serif;font-size:29px;font-weight:bold;overflow:hidden}
+.gm-page .brand-mark:before{content:"";position:absolute;inset:5px;border:1px solid rgba(255,255,255,.55);border-radius:50%}
+.gm-page .brand-mark i{position:absolute;width:10px;height:10px;background:var(--gold);border-radius:0 100% 0 100%;right:6px;top:5px;transform:rotate(20deg)}
+.gm-page .brand-wordmark{display:flex;flex-direction:column;line-height:1}
+.gm-page .brand-wordmark strong{font-family:Georgia,"Times New Roman",serif;font-size:23px;letter-spacing:.04em}
+.gm-page .brand-wordmark small{font-size:9px;letter-spacing:.42em;margin-top:6px;color:#5e6b61}
+.gm-page .main-nav{display:flex;align-items:center;gap:clamp(15px,2.2vw,34px);font-size:14px;color:#263b31}
+.gm-page .main-nav>a:not(.nav-cta){padding:27px 0 23px;position:relative;white-space:nowrap}
+.gm-page .main-nav>a:not(.nav-cta):after{content:"";position:absolute;height:3px;background:var(--gold);left:0;right:100%;bottom:15px;transition:right .2s}
+.gm-page .main-nav>a:hover:after,.gm-page .main-nav>a.active:after{right:0}
+.gm-page .nav-cta{display:inline-flex;align-items:center;gap:14px;padding:12px 20px;background:var(--gold);border-radius:99px;font-weight:650;white-space:nowrap;transition:transform .2s,background .2s}
+.gm-page .nav-cta:hover,.gm-page .button:hover{transform:translateY(-2px);background:#efb42e}
+.gm-page .menu-toggle{display:none;background:none;border:0;padding:8px}
+.gm-page .menu-toggle span{display:block;width:25px;height:2px;background:var(--green);margin:5px}
+.gm-page .hero{min-height:430px;padding:54px clamp(22px,7vw,112px) 46px;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(340px,.88fr) minmax(420px,1.12fr);align-items:center;gap:30px;background:radial-gradient(ellipse at 82% 28%,rgba(219,229,201,.8),transparent 40%),linear-gradient(115deg,#fbfaf2 0%,#f5f6e9 58%,#e8eee0 100%)}
+.gm-page .hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(22,74,55,.12) 1px,transparent 1px);background-size:23px 23px;opacity:.45;mask-image:linear-gradient(90deg,#000,transparent 75%);pointer-events:none}
+.gm-page .hero-copy{position:relative;z-index:2;max-width:550px}
+.gm-page .eyebrow{margin:0 0 15px;color:#9a6a12;font-size:11px;letter-spacing:.22em;font-weight:800}
+.gm-page .eyebrow span{display:inline-block;width:29px;height:2px;background:var(--gold);vertical-align:middle;margin-right:11px}
+.gm-page .hero h1,.gm-page .section-heading h2,.gm-page .why-intro h2,.gm-page .contact-banner h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.04em;line-height:1.05;margin:0;color:var(--green-dark);font-weight:700}
+.gm-page .hero h1{font-size:clamp(38px,4vw,59px);max-width:620px}
+.gm-page .hero h1 em,.gm-page .why-intro h2 em{font-style:normal;color:#b98517}
+.gm-page .hero-description{font-size:16px;color:#506157;max-width:470px;margin:20px 0 24px}
+.gm-page .button{display:inline-flex;align-items:center;justify-content:center;gap:22px;border-radius:99px;padding:14px 23px;font-size:14px;font-weight:750;transition:transform .2s,background .2s}
+.gm-page .button-primary{background:var(--gold);color:#1c2e24;box-shadow:0 7px 20px rgba(197,141,20,.18)}
+.gm-page .hero-proof{display:flex;align-items:center;gap:9px;font-size:11px;color:#6c786e;margin-top:23px}
+.gm-page .hero-proof b{color:var(--gold)}
+.gm-page .proof-dot{width:20px;height:20px;display:grid;place-items:center;background:#dfe9d8;color:var(--green);border-radius:50%;font-weight:800}
+.gm-page .hero-art{height:330px;position:relative;min-width:0}
+.gm-page .world-map{position:absolute;width:100%;height:100%;inset:0;color:#b8c9aa;z-index:1}
+.gm-page .sun-glow{position:absolute;width:230px;height:230px;border-radius:50%;right:7%;top:13%;background:rgba(255,255,255,.56);filter:blur(2px)}
+.gm-page .ship-illustration{position:absolute;right:-2%;bottom:0;width:38%;height:130px;z-index:2}
+.gm-page .ship-sun{position:absolute;right:22%;top:0;width:58px;height:58px;border-radius:50%;background:#f6d58b;opacity:.65}
+.gm-page .ship-plane{position:absolute;right:0;top:-76px;font-size:43px;color:#b7c1ad;transform:rotate(-13deg)}
+.gm-page .ship-hull{position:absolute;bottom:20px;right:0;width:100%;height:33px;background:linear-gradient(180deg,#3c5546,#173c2e);clip-path:polygon(0 0,100% 0,82% 100%,15% 100%)}
+.gm-page .ship-deck{position:absolute;bottom:53px;right:12%;width:75%;height:43px;display:flex;align-items:flex-end;gap:3px;transform:skewY(-2deg)}
+.gm-page .ship-deck i{display:block;height:100%;flex:1;background:#c96f37;border-top:5px solid #e8a04c;box-shadow:inset 0 -5px rgba(30,52,41,.16)}
+.gm-page .ship-deck i:nth-child(2n){height:77%;background:#e2a34c}
+.gm-page .ship-deck i:nth-child(3n){height:62%;background:#607e6c}
+.gm-page .ship-water{position:absolute;bottom:5px;left:-10%;width:120%;height:12px;border-top:2px solid #a7c6b1;border-bottom:2px solid #a7c6b1;opacity:.8}
+.gm-page .art-caption{position:absolute;bottom:3px;left:4%;display:flex;align-items:center;gap:11px;background:rgba(255,255,250,.88);border:1px solid rgba(22,74,55,.1);padding:11px 16px;border-radius:13px;z-index:4;box-shadow:var(--shadow)}
+.gm-page .caption-icon{display:grid;place-items:center;background:var(--green);color:#fff;width:34px;height:34px;border-radius:50%;font-size:19px}
+.gm-page .art-caption strong,.gm-page .art-caption small{display:block}
+.gm-page .art-caption strong{font-size:12px}
+.gm-page .art-caption small{font-size:10px;color:var(--muted)}
+.gm-page .hero-bottom-line{position:absolute;bottom:0;left:7%;right:7%;height:1px;background:linear-gradient(90deg,transparent,#c8d5c3,transparent)}
+.gm-page .markets-section{padding:62px clamp(22px,7vw,112px) 72px;background:#fcfbf5}
+.gm-page .section-heading{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:27px}
+.gm-page .section-heading h2,.gm-page .why-intro h2{font-size:clamp(31px,3.2vw,43px)}
+.gm-page .section-heading>p{max-width:390px;color:var(--muted);font-size:13px;margin:0 0 4px}
+.gm-page .markets-grid{display:grid;grid-template-columns:1.18fr 1fr 1fr;gap:16px}
+.gm-page .market-card{min-height:205px;display:flex;align-items:center;gap:17px;padding:24px 20px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(135deg,#fffef9,#f8f9ef);position:relative;overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s}
+.gm-page .market-card:after{content:"";position:absolute;width:110px;height:110px;right:-60px;top:-60px;border:1px solid rgba(204,164,73,.2);border-radius:50%;box-shadow:0 0 0 15px rgba(204,164,73,.04),0 0 0 30px rgba(204,164,73,.03)}
+.gm-page .market-card:hover{transform:translateY(-4px);border-color:#c6d5bf;box-shadow:var(--shadow)}
+.gm-page .market-middle-east{grid-row:span 1}
+.gm-page .market-north-america{grid-column:span 2}
+.gm-page .region-art{width:94px;height:94px;flex:0 0 94px;display:grid;place-items:center;border-radius:50%;background:#eff0d9;color:var(--green);position:relative}
+.gm-page .region-art svg{width:78px;height:78px}
+.gm-page .region-art>span{position:absolute;right:15px;top:10px;color:var(--gold)}
+.gm-page .asia-art{background:#e8efe1}
+.gm-page .europe-art{background:#f3edda}
+.gm-page .africa-art{background:#e7efdf}
+.gm-page .north-art{background:#e9eee0}
+.gm-page .market-content{min-width:0;position:relative;z-index:1}
+.gm-page .region-title{display:flex;align-items:center;gap:8px}
+.gm-page .region-number{font-size:10px;letter-spacing:.08em;color:#b68725;font-weight:800}
+.gm-page .market-content h3{font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1.1;margin:0;color:var(--green-dark)}
+.gm-page .market-content>p{font-size:12px;color:var(--muted);margin:8px 0 13px}
+.gm-page .country-list{display:flex;flex-wrap:wrap;gap:7px}
+.gm-page .country-list span{font-size:10px;color:#2d4b3c;background:#eaf0e3;border-radius:99px;padding:7px 10px;white-space:nowrap;border:1px solid rgba(22,74,55,.035)}
+.gm-page .why-section{padding:62px clamp(22px,7vw,112px);background:#eef2e7;display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.gm-page .why-intro h2{max-width:390px}
+.gm-page .why-intro>p:last-child{font-size:14px;color:var(--muted);max-width:430px;margin-bottom:0}
+.gm-page .why-points{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gm-page .why-points>div{border-left:1px solid #cdd9c8;padding:6px 0 6px 17px}
+.gm-page .why-icon{width:32px;height:32px;border-radius:10px;background:#fff5d8;color:#a8750d;display:grid;place-items:center;font-size:20px;font-weight:800;margin-bottom:14px}
+.gm-page .why-points h3{font-size:13px;margin:0 0 7px}
+.gm-page .why-points p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
+.gm-page .contact-banner{margin:0;padding:43px clamp(22px,7vw,112px);display:flex;align-items:center;justify-content:space-between;gap:25px;background:var(--green);color:white;position:relative;overflow:hidden}
+.gm-page .contact-banner:after{content:"N";position:absolute;right:10%;top:-90px;font-family:Georgia,serif;font-size:300px;line-height:1;color:rgba(255,255,255,.035);pointer-events:none}
+.gm-page .contact-banner .eyebrow{color:#e9bd5e;margin-bottom:10px}
+.gm-page .contact-banner h2{color:white;font-size:clamp(27px,3vw,38px);max-width:650px}
+.gm-page .contact-banner>div>p:last-child{color:#d2dfd4;font-size:13px;margin-bottom:0}
+.gm-page .button-light{background:#f5c454;color:#1d382b;position:relative;z-index:1;white-space:nowrap}
+.gm-page .site-footer{display:flex;align-items:center;gap:24px;padding:24px clamp(22px,7vw,112px);background:#102f24;color:#eaf0e7;flex-wrap:wrap}
+.gm-page .footer-brand .brand-wordmark strong{font-size:19px}
+.gm-page .footer-brand .brand-mark{width:37px;height:37px}
+.gm-page .site-footer>p{font-size:11px;color:#bdcfc2;margin:0 auto 0 0}
+.gm-page .site-footer>a:not(.brand){font-size:12px;color:#f0c45c}
+.gm-page .site-footer>small{width:100%;border-top:1px solid rgba(255,255,255,.12);padding-top:15px;font-size:10px;color:#a9bdb0}
+.gm-page .back-to-top{position:fixed;right:24px;bottom:22px;width:44px;height:44px;border:0;border-radius:50%;background:var(--gold);color:#20382a;font-size:25px;box-shadow:0 5px 18px #172d2426;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:.2s;z-index:10}
+.gm-page .back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+@media(max-width:1050px){
+.gm-page .site-header{padding:0 28px}
+.gm-page .main-nav{gap:17px}
+.gm-page .main-nav{font-size:12px}
+.gm-page .hero{padding-left:38px;padding-right:38px}
+.gm-page .markets-section,.gm-page .why-section,.gm-page .contact-banner{padding-left:38px;padding-right:38px}
+.gm-page .market-card{padding:18px 14px;gap:12px}
+.gm-page .region-art{width:76px;height:76px;flex-basis:76px}
+.gm-page .region-art svg{width:64px;height:64px}
+.gm-page .market-content h3{font-size:22px}
+.gm-page .country-list span{font-size:9px;padding:6px 8px}
+}
+@media(max-width:780px){
+.gm-page .site-header{height:70px;padding:0 20px}
+.gm-page .menu-toggle{display:block;z-index:22}
+.gm-page .main-nav{display:none;position:absolute;top:69px;left:0;right:0;padding:12px 22px 22px;background:#fffef8;border-bottom:1px solid var(--line);box-shadow:0 18px 25px #102f2414;align-items:stretch;gap:0;flex-direction:column}
+.gm-page .main-nav.open{display:flex}
+.gm-page .main-nav>a:not(.nav-cta){padding:13px 0;font-size:14px}
+.gm-page .main-nav>a:not(.nav-cta):after{bottom:7px}
+.gm-page .nav-cta{justify-content:center;margin-top:8px}
+.gm-page .hero{grid-template-columns:1fr;padding:43px 24px 28px;gap:12px}
+.gm-page .hero h1{font-size:clamp(38px,9vw,54px)}
+.gm-page .hero-art{height:280px;margin-top:4px}
+.gm-page .hero-proof{flex-wrap:wrap}
+.gm-page .markets-section{padding:48px 22px}
+.gm-page .section-heading{display:block}
+.gm-page .section-heading>p{margin-top:14px}
+.gm-page .markets-grid{grid-template-columns:1fr 1fr}
+.gm-page .market-card{min-height:190px;align-items:flex-start;flex-direction:column}
+.gm-page .market-middle-east,.gm-page .market-north-america{grid-column:auto;grid-row:auto}
+.gm-page .region-art{width:68px;height:68px;flex-basis:68px}
+.gm-page .region-art svg{width:57px;height:57px}
+.gm-page .market-content h3{font-size:22px}
+.gm-page .why-section{padding:48px 22px;grid-template-columns:1fr;gap:32px}
+.gm-page .why-points{gap:13px}
+.gm-page .why-points>div{padding-left:12px}
+.gm-page .contact-banner{padding:38px 22px;align-items:flex-start;flex-direction:column}
+.gm-page .site-footer{padding:23px 22px;gap:15px}
+.gm-page .site-footer>p{width:100%;order:2}
+.gm-page .site-footer>a:not(.brand){order:3}
+.gm-page .site-footer>small{order:4}
+.gm-page .footer-brand{order:1}
+}
+@media(max-width:480px){
+.gm-page .brand-wordmark strong{font-size:20px}
+.gm-page .brand-mark{width:39px;height:39px}
+.gm-page .hero{padding-top:35px}
+.gm-page .hero-description{font-size:14px}
+.gm-page .hero-art{height:230px}
+.gm-page .art-caption{left:0;padding:8px 10px}
+.gm-page .ship-illustration{width:42%;transform:scale(.85);transform-origin:bottom right}
+.gm-page .markets-grid{grid-template-columns:1fr}
+.gm-page .market-card{min-height:unset;flex-direction:row;align-items:center;padding:19px 15px}
+.gm-page .market-north-america{grid-column:auto}
+.gm-page .region-art{width:70px;height:70px;flex-basis:70px}
+.gm-page .market-content h3{font-size:23px}
+.gm-page .country-list span{white-space:normal}
+.gm-page .why-points{grid-template-columns:1fr}
+.gm-page .why-points>div{display:grid;grid-template-columns:35px 1fr;column-gap:10px;border-left:0;border-bottom:1px solid #cdd9c8;padding:0 0 14px}
+.gm-page .why-icon{grid-row:span 2;margin:0}
+.gm-page .why-points h3{align-self:end}
+.gm-page .why-points p{align-self:start}
+.gm-page .section-heading h2{font-size:34px}
+.gm-page .contact-banner h2{font-size:30px}
+.gm-page .site-footer>a:not(.brand){margin-left:0}
+}
+@media(prefers-reduced-motion:reduce){
+.gm-page *,.gm-page *:before,.gm-page *:after{transition:none!important}
+}

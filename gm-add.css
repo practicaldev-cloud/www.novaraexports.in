@@ -1,0 +1,162 @@
+/* Global Markets page: small additions, loaded after gm-style.css */
+
+/* the site's global heading and paragraph styles must not change this page's content */
+.gm-page{font-size:16px}
+.gm-page h1,.gm-page h2,.gm-page h3{font-family:inherit;font-weight:700;line-height:normal;letter-spacing:normal;margin:0}
+.gm-page p{margin:1em 0}
+
+/* drawn flags (emoji flags only show as letters on Windows) */
+.gm-page .country-list span{display:inline-flex;align-items:center;gap:6px}
+.gm-page .country-list .flag{width:17px;height:auto;aspect-ratio:3/2;border-radius:2px;flex:none;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+
+/* the site's standard "Tell us what you need to source" band sits right under the content */
+.gm-page + .cta-section{padding-top:clamp(48px,6vw,80px)}
+
+/* ===== Hover and light animation (added on top of the supplied design) ===== */
+@keyframes gmShine{to{background-position:200% center}}
+@keyframes gmFloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@keyframes gmRise{from{opacity:0;translate:0 36px}to{opacity:1;translate:0 0}}
+
+/* 1. "Discuss Your Requirements": same pulse ring and hover as the footer enquiry button */
+.gm-page .hero .button-primary{position:relative;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .2s}
+.gm-page .hero .button-primary:hover{transform:translateY(-4px);background:#efb42e;box-shadow:0 14px 28px -10px rgba(0,0,0,.4)}
+.gm-page .hero .button-primary:active{transform:translateY(0)}
+.gm-page .hero .button-primary span{display:inline-block;transition:translate .25s}
+.gm-page .hero .button-primary:hover span{translate:6px 0}
+
+/* 2. market cards and country chips */
+.gm-page .market-card{transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s,background .3s}
+.gm-page .market-card:hover{transform:translateY(-8px);border-color:#d9b04f;box-shadow:0 26px 48px -24px rgba(27,58,43,.35);background:linear-gradient(135deg,#fffdf4,#f3f6e8)}
+.gm-page .market-card::after{transition:scale .6s cubic-bezier(.2,.8,.2,1)}
+.gm-page .market-card:hover::after{scale:1.6}
+.gm-page .region-art{transition:rotate .45s cubic-bezier(.2,.8,.2,1),scale .45s,background .3s}
+.gm-page .market-card:hover .region-art{rotate:-8deg;scale:1.08;background:#e4ebc8}
+.gm-page .country-list span{cursor:default;transition:transform .22s,background .22s,color .22s,box-shadow .22s}
+.gm-page .country-list span:hover{transform:translateY(-3px);background:var(--green);color:#fff;box-shadow:0 8px 16px -8px rgba(22,74,55,.55)}
+
+/* 3. "Trade built on trust and quality": bigger type, soft animation, boxes with hover */
+.gm-page .why-intro h2 em{background:linear-gradient(90deg,#b98517,#e8b43a,#b98517);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gmShine 5s linear infinite}
+.gm-page .why-points>div{position:relative;background:rgba(255,255,255,.55);border:1px solid #d5e0cf;border-radius:18px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .3s,border-color .3s}
+.gm-page .why-points>div:hover{transform:translateY(-8px);background:#fff;border-color:#d9b04f;box-shadow:0 24px 44px -24px rgba(27,58,43,.35)}
+.gm-page .why-icon{animation:gmFloat 4.5s ease-in-out infinite;transition:rotate .4s,scale .4s,background .3s,color .3s}
+.gm-page .why-points>div:nth-child(2) .why-icon{animation-delay:-1.5s}
+.gm-page .why-points>div:nth-child(3) .why-icon{animation-delay:-3s}
+.gm-page .why-points>div:hover .why-icon{rotate:-10deg;scale:1.15;background:var(--gold);color:#fff}
+@supports (animation-timeline:view()){
+  .gm-page .why-points>div{animation:gmRise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+}
+
+@media (min-width:781px){
+  .gm-page .why-section{grid-template-columns:.9fr 1.1fr;gap:56px}
+  .gm-page .why-intro h2{font-size:clamp(38px,4.2vw,56px);max-width:560px}
+  .gm-page .why-intro .eyebrow{font-size:12px}
+  .gm-page .why-intro>p:last-child{font-size:17px;line-height:1.65;max-width:520px}
+  .gm-page .why-points{gap:18px}
+  .gm-page .why-points>div{padding:24px 20px}
+  .gm-page .why-icon{width:52px;height:52px;border-radius:15px;font-size:27px;margin-bottom:18px}
+  .gm-page .why-points h3{font-size:18px;margin:0 0 9px}
+  .gm-page .why-points p{font-size:14.5px;line-height:1.6}
+}
+@media (max-width:780px){
+  .gm-page .why-points>div{padding:14px 12px}
+  .gm-page .why-points h3{font-size:16px}
+  .gm-page .why-points p{font-size:13px}
+  .gm-page .why-intro>p:last-child{font-size:15px}
+}
+
+/* ===== Hero: full map picture, no empty space ===== */
+.gm-page .hero{
+  display:block;position:relative;overflow:hidden;
+  padding-top:44px;padding-bottom:36px;
+  min-height:calc(58vw * 392 / 1020);
+  background:linear-gradient(115deg,#fbfaf2 0%,#f3f6e6 58%,#e8eee0 100%);
+}
+.gm-page .hero-copy{position:relative;z-index:3;max-width:min(860px,56%)}
+.gm-page .hero h1{
+  font-family:'Young Serif',Georgia,"Times New Roman",serif;font-weight:400;
+  letter-spacing:-.02em;line-height:1.1;font-size:clamp(30px,2.55vw,46px);max-width:none
+}
+.gm-page .hero h1 em{color:inherit}
+.gm-page .hero-description{margin:16px 0 20px;max-width:520px}
+.gm-page .hero-proof{margin-top:18px}
+.gm-page .hero .eyebrow{display:flex;flex-direction:row-reverse;justify-content:flex-end;align-items:center;gap:14px}
+.gm-page .hero .eyebrow span{margin:0}
+
+/* picture fills the full height of the hero */
+.gm-page .hero-art{
+  position:absolute;top:0;bottom:0;right:0;z-index:1;
+  width:58%;height:auto;margin:0;min-width:0;
+  background:url("hero-map.jpg") right center / cover no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 18%);
+}
+.gm-page .hero-art > *{display:none}
+
+/* tablet and phone: text first, picture below it */
+@media(max-width:900px){
+  .gm-page .hero{min-height:0;padding-top:36px}
+  .gm-page .hero-copy{max-width:none}
+  .gm-page .hero h1{font-size:clamp(34px,8vw,48px)}
+  .gm-page .hero-art{
+    position:relative;top:auto;bottom:auto;width:calc(100% + 48px);
+    aspect-ratio:1020 / 392;margin:24px -24px -28px;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%);
+    mask-image:linear-gradient(180deg,transparent 0,#000 12%);
+  }
+}
+
+/* ===== Market cards: same look as the reference ===== */
+.gm-page .region-number{display:none}
+.gm-page .market-card{gap:24px;padding:26px 26px;min-height:215px}
+.gm-page .region-art{width:auto;height:auto;flex:0 0 auto;background:transparent;border-radius:0}
+.gm-page .market-card:hover .region-art{rotate:0;scale:1.06;background:transparent}
+.gm-page .region-art img{display:block;width:auto;height:120px}
+.gm-page .markets-grid .market-card:first-child .region-art img,
+.gm-page .markets-grid .market-card:last-child .region-art img{height:142px}
+
+/* bigger text */
+.gm-page .market-content h3{font-size:clamp(27px,2.1vw,34px);line-height:1.1}
+.gm-page .market-content>p{font-size:15px;line-height:1.5;margin:8px 0 14px}
+.gm-page .country-list{gap:9px}
+.gm-page .country-list span{font-size:14px;padding:8px 16px 8px 9px;gap:9px}
+.gm-page .country-list .flag{width:26px;height:26px;aspect-ratio:1/1;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+
+/* North America first (wide column), Middle East last (spans 2 columns) */
+@media(min-width:781px){
+  .gm-page .market-north-america{grid-column:auto}
+  .gm-page .market-middle-east{grid-column:span 2}
+}
+
+@media(max-width:1050px){
+  .gm-page .market-card{padding:20px 16px;gap:16px}
+  .gm-page .region-art img{height:96px}
+  .gm-page .markets-grid .market-card:first-child .region-art img,
+  .gm-page .markets-grid .market-card:last-child .region-art img{height:110px}
+  .gm-page .market-content h3{font-size:25px}
+  .gm-page .market-content>p{font-size:14px}
+  .gm-page .country-list span{font-size:12.5px;padding:6px 12px 6px 7px}
+  .gm-page .country-list .flag{width:22px;height:22px}
+}
+@media(max-width:480px){
+  .gm-page .region-art img,
+  .gm-page .markets-grid .market-card:first-child .region-art img,
+  .gm-page .markets-grid .market-card:last-child .region-art img{height:80px}
+  .gm-page .country-list span{white-space:normal}
+}
+.gm-page .country-list span{white-space:normal;font-size:13.5px;padding:7px 14px 7px 8px}
+.gm-page .market-content{flex:1 1 0}
+.gm-page .market-card{padding:24px 22px;gap:20px}
+
+/* ===== Global Markets: text clarity (final) ===== */
+.gm-page{--muted:#4a5a51}
+
+.gm-page .eyebrow{font-size:12.5px}
+.gm-page .hero-description{font-size:18px;line-height:1.65;color:#3f4f46;max-width:520px}
+.gm-page .hero-proof{font-size:14.5px;color:#4a5a51}
+.gm-page .section-heading>p{font-size:16px;line-height:1.6;color:#445349;max-width:430px}
+.gm-page .market-content>p{color:#445349}
+.gm-page .why-intro>p:last-child,
+.gm-page .why-points p{color:#445349}
+
+.gm-page .hero-copy h1,
+.gm-page .hero-copy p{text-shadow:0 0 12px rgba(251,250,242,.8)}
